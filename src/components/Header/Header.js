@@ -1,9 +1,10 @@
 import React from "react";
+import c from "./Header.module.css";
 function Header() {
   return (
-    <header className="header">
+    <header className={c.header}>
       <img
-        className="header-img"
+        className={c.header_img}
         src="https://www.logaster.ru/static/v3/img/products/logo.png"
       />
     </header>

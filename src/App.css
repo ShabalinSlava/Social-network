@@ -2,35 +2,3 @@
   display: flex;
   justify-content: space-between;
 }
-.header {
-  background-color: #12c6ef;
-}
-.header-img {
-  width: 10%;
-}
-
-.content {
-  width: 80%;
-}
-
-.nav {
-  width: 20%;
-  background-color: #0e1520;
-}
-
-.content-img {
-  width: 100%;
-  object-fit: cover;
-  max-height: 400px;
-}
-
-.nav-list {
-  font-size: 18px;
-  margin: 15px 0px;
-  color: #fff;
-  list-style-type: none;
-}
-
-.content-wrap {
-  background-color: #12c6ef;
-}

@@ -1,0 +1,17 @@
+.dialogs{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.dialogs__items{
+  width: 20%;
+  padding: 10px;
+}
+.dialogs__items .active{
+  color:#12c6ef;
+}
+.messages{
+  width: 80%;
+  padding: 10px;
+}

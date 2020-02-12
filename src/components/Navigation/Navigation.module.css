@@ -1,0 +1,19 @@
+.nav {
+  width: 20%;
+  background-color: #0e1520;
+}
+
+.nav__list {
+  font-size: 18px;
+  margin: 15px 0px;
+  color: #fff;
+  list-style-type: none;
+  cursor: pointer;
+}
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+}
+.active {
+  color: #12c6ef;
+}

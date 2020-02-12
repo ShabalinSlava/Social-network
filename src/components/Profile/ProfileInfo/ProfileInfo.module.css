@@ -1,0 +1,14 @@
+.content__img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.content__wrap {
+  background-color: #12c6ef;
+  margin-top: -5px;
+}
+
+.description__block{
+  padding: 10px;
+}
