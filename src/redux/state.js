@@ -1,5 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import sidebarReducer from './sidebar-reducer';
 let store = {
   _state:{
     profilePage: {
@@ -26,8 +27,10 @@ let store = {
         {id: 1, message: "Привет"},
         {id: 2, message: "Как дела?"},
         {id: 3, message: "Что нового?"}
-      ]
-    }
+      ],
+      newMessageBody: ''
+    },
+    sidebar: {}
   },
   _callSubscriber() {
     console.log("state was changed");
@@ -39,31 +42,10 @@ let store = {
     this._callSubscriber = observer;
   },
   dispatch(action) {
-    if(action.type === ADD_POST) {
-      let newPost = {
-        id:5,
-        message:this._state.profilePage.newPostText,
-        likesCount:0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if(action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
-  }
-}
-
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST
-  }
-}
-
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT, newText:text
+    this._state.profilePage =  profileReducer(this._state.profileReducer, action);
+    this._state.dialogsPage =  dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar =  sidebarReducer(this._state.sidebar, action);
+    this._callSubscriber(this._state);
   }
 }
 export default store;
