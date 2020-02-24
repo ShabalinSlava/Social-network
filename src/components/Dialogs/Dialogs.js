@@ -10,11 +10,11 @@ const Dialogs = (props) => {
   let messagesElements = state.messages.map( message => <Message message={message.message} />);
   let newMessageBody = state.newMessageBody;
   let onSendMessageClick = () => {
-     props.store.dispatch(sendMessageCreator());
+    props.store.dispatch(sendMessageCreator());
   }
   let onNewMessageChange = (e) => {
-  let body = e.target.value;
-  props.store.dispatch(updateNewMessageBodyCreator(body));
+    let body = e.target.value;
+    props.store.dispatch(updateNewMessageBodyCreator(body));
   }
   return(
     <div className={c.dialogs}>
