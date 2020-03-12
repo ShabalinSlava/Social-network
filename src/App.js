@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Route } from "react-router-dom";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 function App(props) {
   return (
@@ -14,8 +15,8 @@ function App(props) {
         <Header />
         <div className="wrap">
           <Navigation />
-          <Route  path="/profile" render={ () => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/> } />
-          <Route  path="/dialogs" render={ () => <Dialogs store={props.store} state={props.state.dialogsPage}/> } />
+          <Route  path="/profile" render={ () => <Profile /> } />
+          <Route  path="/dialogs" render={ () => <DialogsContainer /> } />
         </div>
       </div>
     </BrowserRouter>
