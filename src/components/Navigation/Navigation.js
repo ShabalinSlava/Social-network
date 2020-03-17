@@ -16,6 +16,11 @@ function Navigation() {
           </NavLink>
         </li>
         <li className={c.nav__list}>
+          <NavLink className={c.nav__link} activeClassName={c.active}  to="/users" >
+            Users
+          </NavLink>
+        </li>
+        <li className={c.nav__list}>
           <NavLink className={c.nav__link} to="">
             News
           </NavLink>
