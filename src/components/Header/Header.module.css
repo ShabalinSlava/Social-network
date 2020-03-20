@@ -1,6 +1,11 @@
 .header {
+  display: flex;
+  justify-content: space-between;
   background-color: #12c6ef;
 }
 .header_img {
   width: 10%;
+}
+.login_block a{
+  color:#fff;
 }
