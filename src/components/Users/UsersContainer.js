@@ -5,6 +5,8 @@ import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../../components/common/preloader/preloader';
 import {usersAPI} from '../../api/api';
+import {withAuthRedirect} from '../../hoc/withAuthRedirect';
+import {compose} from 'redux';
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.getUsers(this.props.currentPage, this.props.pageSize);
@@ -41,5 +43,7 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect( mapStateToProps,
-  {follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers }) (UsersContainer);
+  export default compose(
+    withAuthRedirect,
+    connect( mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+  ) (UsersContainer)
