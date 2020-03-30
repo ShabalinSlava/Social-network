@@ -1,16 +1,17 @@
 import React from "react";
 import Profile from './Profile';
-import * as axios from 'axios';
 import {connect} from 'react-redux';
 import {getUserProfile, getStatus, updateStatus} from '../../redux/profile-reducer';
-import {Redirect, withRouter} from 'react-router-dom';
-import {withAuthRedirect} from '../../hoc/withAuthRedirect';
+import {withRouter} from 'react-router-dom';
 import {compose} from 'redux';
 class ProfileContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
      userId = this.props.autorizedUserId;
+     if(!userId) {
+       this.props.history.push('/login');
+     }  // Это строка для логина
     }
     this.props.getUserProfile(userId);
     setTimeout(() => {
