@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Dialogs from './components/Dialogs/Dialogs';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -24,7 +24,6 @@ class App extends React.Component{
     }
 
     return (
-      <BrowserRouter>
         <div className='app-wrapper'>
           <HeaderContainer />
           <div className='wrap'>
@@ -35,7 +34,6 @@ class App extends React.Component{
             <Route  path='/login' render={ () => <LoginPage /> } />
           </div>
         </div>
-      </BrowserRouter>
     );
   }
 }

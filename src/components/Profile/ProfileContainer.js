@@ -9,9 +9,9 @@ class ProfileContainer extends React.Component {
     let userId = this.props.match.params.userId;
     if (!userId) {
      userId = this.props.autorizedUserId;
-     if(!userId) {
-       this.props.history.push('/login');
-     }  // Это строка для логина
+     // if(!userId) {
+     //   this.props.history.push('/login');
+     // }  // Это строка для логина
     }
     this.props.getUserProfile(userId);
     setTimeout(() => {

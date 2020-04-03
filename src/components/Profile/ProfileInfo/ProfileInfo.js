@@ -2,8 +2,9 @@ import React from "react";
 import c from "./ProfileInfo.module.css";
 import Preloader from '../../common/preloader/preloader';
 import ProfileStatus from './ProfileStatus';
-const ProfileInfo = (props) => {
-  if(!props.profile) {
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
+const ProfileInfo = ({profile, status, updateStatus}) => {
+  if(!profile) {
     return <Preloader />
   }
   return (
@@ -13,8 +14,8 @@ const ProfileInfo = (props) => {
       </div>
       <div className={c.content__wrap}>
         <div className={c.description__block}>
-          <img src={props.profile.photos.large} />
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+          <img src={profile.photos.large} />
+            <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
         </div>
       </div>
     </div>
